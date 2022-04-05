@@ -1,34 +1,33 @@
 <?php
 
-namespace Modules\Product\Http\Controllers;
+namespace Modules\Admin\Http\Controllers;
 
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
-class ProductController extends Controller
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
      * @return Renderable
      */
-    public function index()
-    {
-        return view('product::index');
-    }
-
     public function __construct()
     {
         $this->middleware('auth');
     }
-    
+    public function index()
+    {
+        return view('admin::index');
+    }
+
     /**
      * Show the form for creating a new resource.
      * @return Renderable
      */
     public function create()
     {
-        return view('product::create');
+        return view('admin::create');
     }
 
     /**
@@ -48,7 +47,7 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        return view('product::show');
+        return view('admin::show');
     }
 
     /**
@@ -58,7 +57,7 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        return view('product::edit');
+        return view('admin::edit');
     }
 
     /**
